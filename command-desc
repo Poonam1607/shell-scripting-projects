@@ -1,0 +1,33 @@
+Command Descriptions -
+
+#!/bin/bash - sheebang where bash is executable
+then always give metadata before start writing into the files
+touch - creates a file
+vi/vim - create + open up the file
+why touch & vi - touch uses in automation purpose generally where we have to create 1000s of file
+write inside a file - esc -> press "i" -> start writing -> esc -> wq! (save & exit)
+chmod - grant permissions
+ch: change
+777: all permissions
+4: read, 2: write, 1: execute
+root-user which-grp what-are-your-perm
+man - mannual cmd that shows detail of it, use it as a suffix, eg; man ls
+pwd - present-working-directory
+mkdir - create/make directory/folder
+cd - change directory
+df - disk space
+free - memory of the machine
+nproc- cpu of the current machine
+top - every detail like, current running process, tasks running at the moment, sleeping process, cpu, m/m, node status
+set -x - print the command then execute the command ie, prints in debug mode
+ps -ef - ps: process, ef: entire process in full format
+pipe | - sends the output of the first command to the second command
+awk - pattern scanning & processing lang. Filter out the info from the o/p
+set -e - exit the script when there is an error
+set -o - pipefail
+curl - retrieve the info from the internet
+wget - download the file from internet
+sudo - substitute user do, switch to root user
+su - switch user
+find - finds the file by specifying the name of it
+trap - traps the signal and perform the executions on your behalf eg syntax; trap "echo don't use the ctl+c" SIGINT

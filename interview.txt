@@ -1,0 +1,63 @@
+# Shell Script Interview Questions and Answer
+
+Q. Give some commonly used cmd?
+A.
+
+Q. What will happen if date | echo "today is" ?
+A.  It will print only- today is, not date, bcoz date is by default shell cmd and it sends the o/p to the stdin and | is not able to recieve the info from stdin.
+
+Q. touch vs vi/vim ?
+A.
+
+Q. grep vs awk ?
+A.  grep gives the whole sentence, awk give you the particular thing that you want. eg; ps -ef | grep "amazon" | awk -F" " '{print $2}' here giving the specific col info
+    -F is field seperator " "
+
+Q. What is set -exo ?  What will happen if set -e without set -o ?
+A.  set -e only checks the authenticity of the last cmd, if last cmd is crrct then it will pass it so set -o is necessary to check the pipe failures.
+
+Q. curl vs wget ?
+A.
+
+Q. Write a shell script to print the process?
+A. ps -ef
+
+Q. Write a script in which a no is divisble by 3 & 5 but not with 15
+A. #!/bin/bash
+   # metadata
+   # divisible by 3 and 5 not by 15
+   for i in {1..100}; do
+   if ([ 'expr $i % 3 == 0 ] || [ 'expr $i % 5 == 0 ]) && [ 'expr $i % 15 != 0 ];
+   then
+        echo $i
+   fi;
+   done
+
+Q. Write script to count the word 's' in "mississipi"
+A. #!/bin/bash 
+   x=mississipi
+   grep -o "s" <<<"$x" | wc -l
+
+   -o : only filter
+   wc : word count 
+   -l no of lines
+
+Q. How will you debug the shell script?
+A. set -x
+
+Q. What is crontab in Linux?
+A. It's like a schedular which can scedule your task to make it happen automatically without doing it manually everyday.
+
+Q. How to open a read-only file?
+A. vi/vim -r filename.txt, here -r: read-only mode.
+
+Q. Soft vs Hard link?
+A. If you have created the hard link of a file then it will create a copy of it so if the actual ones get deleted hard link still have a backup of your file
+   If you create a soft link of something eg; python3, python is soft link, it just redirect you to python3, it's basically we can say its helpful in making alias,
+   if ones gets deleted then other also gets deleted.
+
+Q. Is bash is statically or dynamically typed?
+A. Dynamic in nature 
+
+Q. How to manage logs of a system that generated huge log files everyday?
+A. By using logrotate cmd.
